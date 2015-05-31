@@ -1,0 +1,10 @@
+F:\Cong Nghe Thong Tin\Analysis and Design Software - Tran Minh Triet\Plugin\Demo_Plugin\Demo_Plugin\bin\Debug\Demo_Plugin.exe
+F:\Cong Nghe Thong Tin\Analysis and Design Software - Tran Minh Triet\Plugin\Demo_Plugin\Demo_Plugin\bin\Debug\Demo_Plugin.pdb
+F:\Cong Nghe Thong Tin\Analysis and Design Software - Tran Minh Triet\Plugin\Demo_Plugin\Demo_Plugin\obj\Debug\Demo_Plugin.csprojResolveAssemblyReference.cache
+F:\Cong Nghe Thong Tin\Analysis and Design Software - Tran Minh Triet\Plugin\Demo_Plugin\Demo_Plugin\obj\Debug\Demo_Plugin.Form1.resources
+F:\Cong Nghe Thong Tin\Analysis and Design Software - Tran Minh Triet\Plugin\Demo_Plugin\Demo_Plugin\obj\Debug\Demo_Plugin.Properties.Resources.resources
+F:\Cong Nghe Thong Tin\Analysis and Design Software - Tran Minh Triet\Plugin\Demo_Plugin\Demo_Plugin\obj\Debug\Demo_Plugin.csproj.GenerateResource.Cache
+F:\Cong Nghe Thong Tin\Analysis and Design Software - Tran Minh Triet\Plugin\Demo_Plugin\Demo_Plugin\obj\Debug\Demo_Plugin.exe
+F:\Cong Nghe Thong Tin\Analysis and Design Software - Tran Minh Triet\Plugin\Demo_Plugin\Demo_Plugin\obj\Debug\Demo_Plugin.pdb
+F:\Cong Nghe Thong Tin\Analysis and Design Software - Tran Minh Triet\Plugin\Demo_Plugin\Demo_Plugin\bin\Debug\PluginDef.dll
+F:\Cong Nghe Thong Tin\Analysis and Design Software - Tran Minh Triet\Plugin\Demo_Plugin\Demo_Plugin\bin\Debug\PluginDef.pdb

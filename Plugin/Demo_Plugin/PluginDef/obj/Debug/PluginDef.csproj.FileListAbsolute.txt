@@ -1,0 +1,5 @@
+F:\Cong Nghe Thong Tin\Analysis and Design Software - Tran Minh Triet\Plugin\Demo_Plugin\PluginDef\bin\Debug\PluginDef.dll
+F:\Cong Nghe Thong Tin\Analysis and Design Software - Tran Minh Triet\Plugin\Demo_Plugin\PluginDef\bin\Debug\PluginDef.pdb
+F:\Cong Nghe Thong Tin\Analysis and Design Software - Tran Minh Triet\Plugin\Demo_Plugin\PluginDef\obj\Debug\PluginDef.csprojResolveAssemblyReference.cache
+F:\Cong Nghe Thong Tin\Analysis and Design Software - Tran Minh Triet\Plugin\Demo_Plugin\PluginDef\obj\Debug\PluginDef.dll
+F:\Cong Nghe Thong Tin\Analysis and Design Software - Tran Minh Triet\Plugin\Demo_Plugin\PluginDef\obj\Debug\PluginDef.pdb

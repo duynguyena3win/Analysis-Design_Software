@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo_Plugin", "Demo_Plugin\Demo_Plugin.csproj", "{9A7132AA-04D7-4E9A-A73C-A39BCCCCBD53}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluginDef", "PluginDef\PluginDef.csproj", "{3A960806-49AF-498A-B900-41446876A224}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExternalPlugin1", "ExternalPlugin1\ExternalPlugin1.csproj", "{1CAD4AB4-ABAC-40B8-AF45-93DBB1DBA213}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9A7132AA-04D7-4E9A-A73C-A39BCCCCBD53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A7132AA-04D7-4E9A-A73C-A39BCCCCBD53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A7132AA-04D7-4E9A-A73C-A39BCCCCBD53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A7132AA-04D7-4E9A-A73C-A39BCCCCBD53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A960806-49AF-498A-B900-41446876A224}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A960806-49AF-498A-B900-41446876A224}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A960806-49AF-498A-B900-41446876A224}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A960806-49AF-498A-B900-41446876A224}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CAD4AB4-ABAC-40B8-AF45-93DBB1DBA213}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CAD4AB4-ABAC-40B8-AF45-93DBB1DBA213}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CAD4AB4-ABAC-40B8-AF45-93DBB1DBA213}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CAD4AB4-ABAC-40B8-AF45-93DBB1DBA213}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
