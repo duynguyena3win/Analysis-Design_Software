@@ -1,0 +1,7 @@
+F:\Cong Nghe Thong Tin\Analysis and Design Software - Tran Minh Triet\Design Pattern\Game_Student\Game_Student\bin\Debug\Game_Student.exe
+F:\Cong Nghe Thong Tin\Analysis and Design Software - Tran Minh Triet\Design Pattern\Game_Student\Game_Student\bin\Debug\Game_Student.pdb
+F:\Cong Nghe Thong Tin\Analysis and Design Software - Tran Minh Triet\Design Pattern\Game_Student\Game_Student\obj\Debug\Game_Student.csprojResolveAssemblyReference.cache
+F:\Cong Nghe Thong Tin\Analysis and Design Software - Tran Minh Triet\Design Pattern\Game_Student\Game_Student\obj\Debug\Game_Student.Properties.Resources.resources
+F:\Cong Nghe Thong Tin\Analysis and Design Software - Tran Minh Triet\Design Pattern\Game_Student\Game_Student\obj\Debug\Game_Student.csproj.GenerateResource.Cache
+F:\Cong Nghe Thong Tin\Analysis and Design Software - Tran Minh Triet\Design Pattern\Game_Student\Game_Student\obj\Debug\Game_Student.exe
+F:\Cong Nghe Thong Tin\Analysis and Design Software - Tran Minh Triet\Design Pattern\Game_Student\Game_Student\obj\Debug\Game_Student.pdb

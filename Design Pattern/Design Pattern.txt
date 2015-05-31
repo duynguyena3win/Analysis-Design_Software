@@ -1,0 +1,8 @@
+Composite
+State
+Strategy
+Template Method
+Observer
+Singleton
+Prototype
+Factory
