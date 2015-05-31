@@ -1,0 +1,27 @@
+﻿<Window x:Class="QuanLyQuanAn.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Quản lý Nhà Hàng" Height="350" Width="488" >
+    <Grid>
+        <ComboBox x:Name="Cb_Quan" HorizontalAlignment="Left" Margin="58,10,0,0" VerticalAlignment="Top" Width="164" Height="27" SelectionChanged="Cb_Quan_SelectionChanged"/>
+        <ListView x:Name="List_Quan" HorizontalAlignment="Left" Height="255" Margin="10,54,0,0" VerticalAlignment="Top" Width="364">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding XPath=@Ten}" Header="Tên Quán" Width="150"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding XPath=@Duong}" Header="Địa Chỉ" Width="70"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding XPath=@Soban}" Header="Số Bàn" Width="70"/>
+                </GridView>
+            </ListView.View>
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <EventSetter Event="PreviewMouseLeftButtonUp" Handler="List_Quan_PreviewMouseLeftButtonUp" />
+                </Style>
+            </ListView.ItemContainerStyle>
+        </ListView>
+        <Label FontSize="14" Content="QUẬN" FontWeight="Bold" FontFamily="Agency FB" HorizontalAlignment="Left" Height="27" Margin="11,12,0,0" VerticalAlignment="Top" Width="43"/>
+        <Button x:Name="Btn_Add" Content="Thêm quán" HorizontalAlignment="Left" Margin="392,54,0,0" VerticalAlignment="Top" Width="78" Height="25" Click="Btn_Add_Click"/>
+        <Button x:Name="Btn_Remove" Content="Xóa Quán" IsEnabled="False" HorizontalAlignment="Left" Margin="392,96,0,0" VerticalAlignment="Top" Width="78" Height="25" Click="Btn_Remove_Click"/>
+        <Button x:Name="Btn_Update" Content="Cập nhật" IsEnabled="False" HorizontalAlignment="Left" Margin="392,138,0,0" VerticalAlignment="Top" Width="78" Height="25" Click="Btn_Update_Click"/>
+
+    </Grid>
+</Window>

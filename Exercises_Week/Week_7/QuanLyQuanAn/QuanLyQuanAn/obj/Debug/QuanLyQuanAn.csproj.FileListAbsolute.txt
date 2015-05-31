@@ -1,0 +1,14 @@
+F:\Cong Nghe Thong Tin\Analysis and Design Software - Tran Minh Triet\Exercises Week\Week 7\QuanLyQuanAn\QuanLyQuanAn\bin\Debug\QuanLyQuanAn.exe.config
+F:\Cong Nghe Thong Tin\Analysis and Design Software - Tran Minh Triet\Exercises Week\Week 7\QuanLyQuanAn\QuanLyQuanAn\bin\Debug\QuanLyQuanAn.exe
+F:\Cong Nghe Thong Tin\Analysis and Design Software - Tran Minh Triet\Exercises Week\Week 7\QuanLyQuanAn\QuanLyQuanAn\bin\Debug\QuanLyQuanAn.pdb
+F:\Cong Nghe Thong Tin\Analysis and Design Software - Tran Minh Triet\Exercises Week\Week 7\QuanLyQuanAn\QuanLyQuanAn\obj\Debug\MainWindow.baml
+F:\Cong Nghe Thong Tin\Analysis and Design Software - Tran Minh Triet\Exercises Week\Week 7\QuanLyQuanAn\QuanLyQuanAn\obj\Debug\OtherWork.baml
+F:\Cong Nghe Thong Tin\Analysis and Design Software - Tran Minh Triet\Exercises Week\Week 7\QuanLyQuanAn\QuanLyQuanAn\obj\Debug\MainWindow.g.cs
+F:\Cong Nghe Thong Tin\Analysis and Design Software - Tran Minh Triet\Exercises Week\Week 7\QuanLyQuanAn\QuanLyQuanAn\obj\Debug\OtherWork.g.cs
+F:\Cong Nghe Thong Tin\Analysis and Design Software - Tran Minh Triet\Exercises Week\Week 7\QuanLyQuanAn\QuanLyQuanAn\obj\Debug\App.g.cs
+F:\Cong Nghe Thong Tin\Analysis and Design Software - Tran Minh Triet\Exercises Week\Week 7\QuanLyQuanAn\QuanLyQuanAn\obj\Debug\QuanLyQuanAn_MarkupCompile.cache
+F:\Cong Nghe Thong Tin\Analysis and Design Software - Tran Minh Triet\Exercises Week\Week 7\QuanLyQuanAn\QuanLyQuanAn\obj\Debug\QuanLyQuanAn.g.resources
+F:\Cong Nghe Thong Tin\Analysis and Design Software - Tran Minh Triet\Exercises Week\Week 7\QuanLyQuanAn\QuanLyQuanAn\obj\Debug\QuanLyQuanAn.Properties.Resources.resources
+F:\Cong Nghe Thong Tin\Analysis and Design Software - Tran Minh Triet\Exercises Week\Week 7\QuanLyQuanAn\QuanLyQuanAn\obj\Debug\QuanLyQuanAn.csproj.GenerateResource.Cache
+F:\Cong Nghe Thong Tin\Analysis and Design Software - Tran Minh Triet\Exercises Week\Week 7\QuanLyQuanAn\QuanLyQuanAn\obj\Debug\QuanLyQuanAn.exe
+F:\Cong Nghe Thong Tin\Analysis and Design Software - Tran Minh Triet\Exercises Week\Week 7\QuanLyQuanAn\QuanLyQuanAn\obj\Debug\QuanLyQuanAn.pdb

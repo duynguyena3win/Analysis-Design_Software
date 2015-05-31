@@ -1,0 +1,21 @@
+﻿<Window x:Class="QuanLyQuanAn.OtherWork"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="OtherWork" Height="250" Width="300" WindowStyle="None" AllowsTransparency="True" MouseLeftButtonDown="Window_MouseLeftButtonDown">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="22*"/>
+            <RowDefinition Height="103*"/>
+        </Grid.RowDefinitions>
+        <Border BorderBrush="Black" BorderThickness="2" Grid.RowSpan="2"/>
+        <Label x:Name="Label_Name" Content="{Binding Path=Label_ControlName}" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="56,0" Width="auto"/>
+        <Button x:Name="Btn_Ok" Content="OK" HorizontalAlignment="Left" Margin="56,156,0,0" VerticalAlignment="Top" Width="78" Height="25" Click="Btn_Add_Click" Grid.Row="1"/>
+        <Button x:Name="Btn_Cancel" Content="Hủy Bỏ" HorizontalAlignment="Left" Margin="174,156,0,0" VerticalAlignment="Top" Width="78" Height="25" Click="Btn_Cancel_Click" Grid.Row="1"/>
+        <Label Content="Tên Quán" FontSize="15" HorizontalAlignment="Left" Margin="8,30,0,0" VerticalAlignment="Top" Width="75" Grid.Row="1"/>
+        <TextBox x:Name="Text_Ten" FontSize="15" Margin="88,31,12,150" Height="25" TextChanged="Text_Ten_TextChanged" Grid.Row="1"/>
+        <TextBox x:Name="Text_Duong" Margin="88,67,12,114" FontSize="15" Height="25" TextChanged="Text_Duong_TextChanged" Grid.Row="1"/>
+        <Label Content="Đường" FontSize="15" HorizontalAlignment="Left" Margin="16,66,0,0" VerticalAlignment="Top" Width="60" Grid.Row="1"/>
+        <TextBox x:Name="Text_Soban" Margin="88,105,12,76" FontSize="15" Height="25" TextChanged="Text_Soban_TextChanged" Grid.Row="1"/>
+        <Label Content="Số bàn" FontSize="15" HorizontalAlignment="Left" Margin="16,104,0,0" VerticalAlignment="Top" Width="60" Grid.Row="1"/>
+    </Grid>
+</Window>

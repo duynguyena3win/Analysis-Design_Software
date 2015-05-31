@@ -1,0 +1,12 @@
+E:\CNTT 2011 - HK5\Phan Tich Va Thiet Ke Phan Mem\QLSV\QLSV\bin\Debug\QLSV.exe.config
+E:\CNTT 2011 - HK5\Phan Tich Va Thiet Ke Phan Mem\QLSV\QLSV\bin\Debug\QLSV.exe
+E:\CNTT 2011 - HK5\Phan Tich Va Thiet Ke Phan Mem\QLSV\QLSV\bin\Debug\QLSV.pdb
+E:\CNTT 2011 - HK5\Phan Tich Va Thiet Ke Phan Mem\QLSV\QLSV\obj\Debug\QLSV.csprojResolveAssemblyReference.cache
+E:\CNTT 2011 - HK5\Phan Tich Va Thiet Ke Phan Mem\QLSV\QLSV\obj\Debug\QLSV.Form1.resources
+E:\CNTT 2011 - HK5\Phan Tich Va Thiet Ke Phan Mem\QLSV\QLSV\obj\Debug\QLSV.Properties.Resources.resources
+E:\CNTT 2011 - HK5\Phan Tich Va Thiet Ke Phan Mem\QLSV\QLSV\obj\Debug\QLSV.csproj.GenerateResource.Cache
+E:\CNTT 2011 - HK5\Phan Tich Va Thiet Ke Phan Mem\QLSV\QLSV\obj\Debug\QLSV.exe
+E:\CNTT 2011 - HK5\Phan Tich Va Thiet Ke Phan Mem\QLSV\QLSV\obj\Debug\QLSV.pdb
+F:\Cong Nghe Thong Tin\Analysis and Design Software - Tran Minh Triet\Exercises Week\Week 1\QLSV\QLSV\bin\Debug\QLSV.exe.config
+F:\Cong Nghe Thong Tin\Analysis and Design Software - Tran Minh Triet\Exercises Week\Week 1\QLSV\QLSV\obj\Debug\QLSV.exe
+F:\Cong Nghe Thong Tin\Analysis and Design Software - Tran Minh Triet\Exercises Week\Week 1\QLSV\QLSV\obj\Debug\QLSV.pdb
