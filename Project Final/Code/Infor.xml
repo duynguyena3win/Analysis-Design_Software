@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WAO_PLAYER>
+  <Background path="null" />
+  <Folder_Container>
+    <Folder path="C:\Users\Nguyên\Downloads\Music" />
+    <Folder path="C:\Users\Nguyên\Documents" />
+  </Folder_Container>
+  <List_Song_Offline>
+    <Song Name_Song="Chia CÃ¡ch BÃ¬nh YÃªn" Name_Artist="Quá»c ThiÃªn" Name_Album="mp3.zing.vn" Genre="unknow" Lenght="00:04:44.3470000" URL="C:\Users\Nguyên\Downloads\Music\Chia Cach Binh Yen - Quoc Thien.mp3" />
+    <Song Name_Song="Dong Thoi Gian (OST Mui Ngo Gai)" Name_Artist="Doan Phi" Name_Album="NhacCuaTui.Com" Genre="Nhac Tre" Lenght="00:04:46.7440000" URL="C:\Users\Nguyên\Downloads\Music\Dong Thoi Gian OST Mui Ngo Gai - Doan Phi.mp3" />
+    <Song Name_Song="Em" Name_Artist="Hồng Dương M4U" Name_Album="NhacCuaTui.Com" Genre="Nhạc Trẻ" Lenght="00:04:39.3790000" URL="C:\Users\Nguyên\Downloads\Music\Em-HongDuongM4U_46kdb_hq.mp3" />
+    <Song Name_Song="I Don't Want" Name_Artist="Khoi My" Name_Album="Nguoi Yeu Cu (Gui Cho Anh 2) (Mini Album)" Genre="unknow" Lenght="00:05:05.0920000" URL="C:\Users\Nguyên\Downloads\Music\I Don t Want - Khoi My.mp3" />
+    <Song Name_Song="Khi Anh Lang Im" Name_Artist="Quoc Thien" Name_Album="Khi Anh Lang Im" Genre="unknow" Lenght="00:04:24.9820000" URL="C:\Users\Nguyên\Downloads\Music\Khi Anh Lang Im - Quoc Thien.mp3" />
+    <Song Name_Song="Khi Em Ngủ Say" Name_Artist="Chi Dân" Name_Album="nhaccuatui.com" Genre="Nhạc Trẻ" Lenght="00:05:13.1780000" URL="C:\Users\Nguyên\Downloads\Music\KhiEmNguSay-ChiDan-2866219_hq.mp3" />
+    <Song Name_Song="Khong Can Them Mot Ai Nua" Name_Artist="Mr. Siro,BigDaddy" Name_Album="mp3.zing.vn" Genre="unknow" Lenght="00:04:12.9150000" URL="C:\Users\Nguyên\Downloads\Music\Khong Can Them Mot Ai.mp3" />
+    <Song Name_Song="Lac" Name_Artist="Quoc Thien" Name_Album="Khi Anh Lang Im" Genre="unknow" Lenght="00:05:21.2250000" URL="C:\Users\Nguyên\Downloads\Music\Lac - Quoc Thien.mp3" />
+    <Song Name_Song="Lac Trong Noi Dau" Name_Artist="Quoc Thien" Name_Album="mp3.zing.vn" Genre="unknow" Lenght="00:04:29.7000000" URL="C:\Users\Nguyên\Downloads\Music\Lac Trong Noi Dau - Quoc Thien.mp3" />
+    <Song Name_Song="Loi Hua" Name_Artist="Nam Cuong,Khac Viet" Name_Album="mp3.zing.vn" Genre="unknow" Lenght="00:05:19.2700000" URL="C:\Users\Nguyên\Downloads\Music\Loi Hua - Nam Cuong Khac Viet.mp3" />
+    <Song Name_Song="Moi Xinh Nu Cuoi" Name_Artist="Quoc Thien" Name_Album="Khi Anh Lang Im" Genre="unknow" Lenght="00:05:03.1640000" URL="C:\Users\Nguyên\Downloads\Music\Moi Xinh Nu Cuoi - Quoc Thien.mp3" />
+    <Song Name_Song="Nguoi Yeu Cu" Name_Artist="Khoi My" Name_Album="mp3.zing.vn" Genre="unknow" Lenght="00:04:10.3350000" URL="C:\Users\Nguyên\Downloads\Music\Nguoi Yeu Cu.mp3" />
+    <Song Name_Song="Noi Tinh Yeu Ket Thuc" Name_Artist="Bui Anh Tuan" Name_Album="mp3.zing.vn" Genre="unknow" Lenght="00:05:16.2990000" URL="C:\Users\Nguyên\Downloads\Music\Noi Tinh Yeu Ket Thuc - Bui Anh Tuan.mp3" />
+    <Song Name_Song="Tan Vao Nhau Mai" Name_Artist="Quoc Thien" Name_Album="Khi Anh Lang Im" Genre="unknow" Lenght="00:04:33.4530000" URL="C:\Users\Nguyên\Downloads\Music\Tan Vao Nhau Mai - Quoc Thien.mp3" />
+    <Song Name_Song="Vet Mua" Name_Artist="Vu Cat Tuong" Name_Album="mp3.zing.vn" Genre="unknow" Lenght="00:03:30.6420000" URL="C:\Users\Nguyên\Downloads\Music\Vet mua - Beat.mp3" />
+    <Song Name_Song="Nah" Name_Artist="[HD] ?i b?i" Name_Album="ClipConverter.cc" Genre="unknow" Lenght="00:03:20.1240000" URL="C:\Users\Nguyên\Downloads\Music\[HD] _i b_i - Nah.mp3" />
+    <Song Name_Song="unknow" Name_Artist="unknow" Name_Album="unknow" Genre="Blues" Lenght="00:03:49.5120000" URL="C:\Users\Nguyên\Documents\Dong-NDN.mp3" />
+    <Song Name_Song="unknow" Name_Artist="unknow" Name_Album="unknow" Genre="Blues" Lenght="00:03:49.5120000" URL="C:\Users\Nguyên\Documents\Dong_mixdown.mp3" />
+    <Song Name_Song="unknow" Name_Artist="unknow" Name_Album="unknow" Genre="Blues" Lenght="00:03:30.3930000" URL="C:\Users\Nguyên\Documents\Vet Mua.mp3" />
+    <Song Name_Song="unknow" Name_Artist="unknow" Name_Album="unknow" Genre="Blues" Lenght="00:03:30.3930000" URL="C:\Users\Nguyên\Documents\Vet Mua_DuyNguyen.mp3" />
+    <Song Name_Song="unknow" Name_Artist="unknow" Name_Album="unknow" Genre="Blues" Lenght="00:03:30.3930000" URL="C:\Users\Nguyên\Documents\Vet Mua_mixdown.mp3" />
+  </List_Song_Offline>
+  <List_Artist_Offline>
+    <Artist Name="Quá»c ThiÃªn" />
+    <Artist Name="Doan Phi" />
+    <Artist Name="Hồng Dương M4U" />
+    <Artist Name="Khoi My" />
+    <Artist Name="Quoc Thien" />
+    <Artist Name="Chi Dân" />
+    <Artist Name="Mr. Siro,BigDaddy" />
+    <Artist Name="Nam Cuong,Khac Viet" />
+    <Artist Name="Bui Anh Tuan" />
+    <Artist Name="Vu Cat Tuong" />
+    <Artist Name="[HD] ?i b?i" />
+    <Artist Name="unknow" />
+  </List_Artist_Offline>
+  <List_Searching_Offline />
+  <List_Video_Offline />
+  <List_Video_Online />
+  <List_Song_Online />
+  <List_Playlist>
+    <Playlist Name_Playlist="Những mùa yêu" ID="0">
+      <Song Name_Song="Bay Cùng Mùa Xuân" Name_Artist=" Yuki Huy Nam" Quality="128 kbit/s" Name_Album="Nhac Cua Tui" URL="http://stream1.nixcdn.com/af378a1f4e31ac81b6bfccf101cc6c29/52c4e28f/NhacCuaTui847/BayCungMuaXuan-YukiHuyNam-2913597.mp3" />
+      <Song Name_Song="Nắng Có Còn Xuân (DJ Turbo Remix)" Name_Artist=" Nam Du" Quality="128 kbit/s" Name_Album="Nhac Cua Tui" URL="http://stream1.nixcdn.com/b76a9c0f33d5fb9889cd651814bf2f02/52c4e28f/NhacCuaTui847/NangCoConXuanDjTurboRemix-NamDu-2910158.mp3" />
+      <Song Name_Song="Mảnh Ghép Đã Vỡ" Name_Artist=" Minh Vương M4U" Quality="320 kbit/s" Name_Album="Nhac Cua Tui" URL="http://download.stream1.nixcdn.com/9b9f20260197e9e09fb0e0376355fa4a/52c4e28f/NhacCuaTui847/ManhGhepDaVo-MinhVuongM4U-2909583_hq.mp3" />
+    </Playlist>
+  </List_Playlist>
+  <List_Playlist_Online />
+</WAO_PLAYER>

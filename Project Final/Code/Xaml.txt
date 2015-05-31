@@ -1,0 +1,70 @@
+
+    
+    <Grid Margin="0,30,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.25*"/>
+            <RowDefinition Height="0.25*"/>
+        </Grid.RowDefinitions>
+        <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Height="80" Width="30" Margin="0,21,0,0" 
+            Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="1" Grid.RowSpan="2">
+
+            <Rectangle x:Name="Rec_Name" Height="80" Width="30" Margin="0,-1,0,0" >
+                <Rectangle.Fill>
+                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,0.7">
+                        <GradientStop Color="#FF11DE3F" Offset="0.871"/>
+                        <GradientStop Color="#FF0625F0" Offset="0.111"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+        </Grid>
+
+        <TextBlock  HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Width="80" Margin="0,101,0,0" FontSize="20" Text="  W A O" >
+            <TextBlock.RenderTransform>
+                <RotateTransform Angle="270"/>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <TabControl x:Name="tab" Template="{StaticResource ZuneTabControlHor}" Margin="0,40,0,0"
+                    Grid.Column="2" Grid.Row="3">
+            <TabItem Header="nowplaying" Margin="40,0,-60,-14" FontSize="32" HorizontalAlignment="Left"
+                     Width="180" VerticalAlignment="Top" TextBlock.Foreground="White" Height="53">
+                <Grid Margin="40,40,10,100">
+                    <Grid Margin="100,100,300,15">
+                        <Border Margin="10,10,359,10" Width="200" BorderThickness="5" BorderBrush="White">
+                            
+                            <Image Name="image_nowplaying" Margin="3,3,3,3"/>
+                        </Border>
+                    </Grid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="collection" Margin="40,0,-60,-14" FontSize="32" HorizontalAlignment="Left"
+                     Width="180" VerticalAlignment="Top" TextBlock.Foreground="White" Height="53">
+                
+            </TabItem>
+            <TabItem Header="download" Margin="40,0,-60,-14" FontSize="32" HorizontalAlignment="Left"
+                     Width="180" VerticalAlignment="Top" TextBlock.Foreground="White" Height="53">
+
+            </TabItem>            
+        </TabControl>
+    </Grid>
+
+////////////
+<Rectangle x:Name="Rec_Name"  Grid.Column="0" Grid.Row="1">
+            <Rectangle.Fill>
+                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,0.7">
+                    <GradientStop Color="#FF11DE3F" Offset="0.871"/>
+                    <GradientStop Color="#FF0625F0" Offset="0.111"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <TextBlock Margin="-3,0,0,-18" HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.Row="1" FontSize="18" Text="W A O" Grid.ColumnSpan="2" >
+            <TextBlock.RenderTransform>
+                <RotateTransform Angle="270"/>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <TabControl x:Name="tab" Template="{StaticResource ZuneTabControlHor}" Grid.Column="1" Grid.Row="1">
+            <TabItem Header="nowplaying" Margin="0,0,0,0" FontSize="32" HorizontalAlignment="Left"
+                     Width="180" VerticalAlignment="Top" TextBlock.Foreground="White" Height="53">
+                
+            </TabItem>
+        </TabControl>

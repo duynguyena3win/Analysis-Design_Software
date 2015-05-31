@@ -1,0 +1,277 @@
+﻿<UserControl x:Class="WAO_Player.Control.Toolbar_Play"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d"
+             d:DesignHeight="50" d:DesignWidth="270" Height="80" Width="270" Loaded="UserControl_Loaded">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/ResourceControl\Button.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/ResourceControl\Slider.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="35"/>
+            <ColumnDefinition Width="35"/>
+            <ColumnDefinition Width="40"/>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="40"/>
+            <ColumnDefinition Width="35"/>
+            <ColumnDefinition Width="35"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <Button x:Name="Button_Previous" Grid.Column="2" Template="{StaticResource Button_Circle}" Margin="5,10,5,10" Content="7" Click="Button_Previous_Click" FontSize="18"/>
+        <Button x:Name="Button_Play" Grid.Column="3" Template="{StaticResource Button_Circle}" Click="Button_Play_Click" Content="4" FontSize="35"/>
+        <Button x:Name="Button_Next" Grid.Column="4" Template="{StaticResource Button_Circle}" Margin="5,10,5,10" Content="8" Click="Button_Next_Click"  FontSize="18"/>
+        <CheckBox x:FieldModifier="public" x:Name="Check_Again"  Content="Q" Grid.Column="5" Width="17" FontFamily="Wingdings 3" FontSize="18" FontWeight="Bold"
+                      Margin="6,15,6,15">
+            <CheckBox.Resources>
+                <LinearGradientBrush x:Key="gradBlue1" StartPoint="0,0.5" EndPoint="1,0.5">
+                    <GradientStop Color="#FF0FBF0F" Offset="0"/>
+                    <GradientStop Color="#FF65FF73" Offset="1"/>
+                </LinearGradientBrush>
+                <LinearGradientBrush x:Key="gradBlue2" StartPoint="0,0.5" EndPoint="1,0.5">
+                    <GradientStop Color="#FF4DF73C" Offset="0"/>
+                    <GradientStop Color="#FF76FD69" Offset="1"/>
+                </LinearGradientBrush>
+            </CheckBox.Resources>
+            <CheckBox.Template>
+                <ControlTemplate TargetType="CheckBox">
+                    <Grid Background="Transparent">
+                        <TextBlock Name="text" Text="Q" Foreground="{StaticResource gradBlue1}"></TextBlock>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="False">
+                            <Setter TargetName="text" Property="Foreground" Value="#FF939393"></Setter>
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsChecked" Value="True"></Condition>
+                                <Condition Property="IsMouseOver" Value="True"></Condition>
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="text" Property="Foreground" Value="{StaticResource gradBlue2}"></Setter>
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsChecked" Value="False"></Condition>
+                                <Condition Property="IsMouseOver" Value="True"></Condition>
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="text" Property="Foreground" Value="White"></Setter>
+                        </MultiTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+
+            </CheckBox.Template>
+            <CheckBox.Style>
+                <Style TargetType="CheckBox">
+                    <Style.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="ToolTip" Value="Turn repeat off"></Setter>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="False">
+                            <Setter Property="ToolTip" Value="Turn repeat on"></Setter>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </CheckBox.Style>
+        </CheckBox>
+        <CheckBox x:FieldModifier="public" x:Name="Check_Round" Grid.Column="6" Width="23" Height="23" Margin="6,15,6,15" FontFamily="Wingdings 3" FontSize="18"
+                      FontWeight="Bold">
+            <CheckBox.Resources>
+                <LinearGradientBrush x:Key="gradBlue1" StartPoint="0,0.5" EndPoint="1,0.5">
+                    <GradientStop Color="#FF0FBF0F" Offset="0"/>
+                    <GradientStop Color="#FF65FF73" Offset="1"/>
+                </LinearGradientBrush>
+                <LinearGradientBrush x:Key="gradBlue2" StartPoint="0,0.5" EndPoint="1,0.5">
+                    <GradientStop Color="#FF4DF73C" Offset="0"/>
+                    <GradientStop Color="#FF76FD69" Offset="1"/>
+                </LinearGradientBrush>
+            </CheckBox.Resources>
+            <CheckBox.Template>
+                <ControlTemplate TargetType="CheckBox">
+                    <Grid Background="Transparent">
+                        <TextBlock Name="text1" Text="L" Foreground="{StaticResource gradBlue1}" Margin="0,5,0,0"></TextBlock>
+                        <TextBlock Name="text2" Text="M" Foreground="{StaticResource gradBlue1}" Margin="7,0,0,0"></TextBlock>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="False">
+                            <Setter TargetName="text1" Property="Foreground" Value="#FF939393"></Setter>
+                            <Setter TargetName="text2" Property="Foreground" Value="#FF939393"></Setter>
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsChecked" Value="True"></Condition>
+                                <Condition Property="IsMouseOver" Value="True"></Condition>
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="text1" Property="Foreground" Value="{StaticResource gradBlue2}"></Setter>
+                            <Setter TargetName="text2" Property="Foreground" Value="{StaticResource gradBlue2}"></Setter>
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsChecked" Value="False"></Condition>
+                                <Condition Property="IsMouseOver" Value="True"></Condition>
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="text1" Property="Foreground" Value="White"></Setter>
+                            <Setter TargetName="text2" Property="Foreground" Value="White"></Setter>
+                        </MultiTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+
+            </CheckBox.Template>
+            <CheckBox.Style>
+                <Style TargetType="CheckBox">
+                    <Style.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="ToolTip" Value="Turn shuffle off"></Setter>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="False">
+                            <Setter Property="ToolTip" Value="Turn shuffle on"></Setter>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </CheckBox.Style>
+        </CheckBox>
+        <CheckBox x:Name="Check_SameAgain" Height="16" Width="20" Grid.Column="1" 
+                      FontFamily="Wingdings" FontSize="28" FontWeight="ExtraBlack" Margin="6,15,6,15"
+                      Background="Transparent" Checked="Check_SameAgain_Checked" Unchecked="Check_SameAgain_Unchecked">
+            <CheckBox.Resources>
+                <LinearGradientBrush x:Key="gradBlue1" StartPoint="0,0.5" EndPoint="1,0.5">
+                    <GradientStop Color="#FF0FBF0F" Offset="0"/>
+                    <GradientStop Color="#FF65FF73" Offset="1"/>
+                </LinearGradientBrush>
+                <LinearGradientBrush x:Key="gradBlue2" StartPoint="0,0.5" EndPoint="1,0.5">
+                    <GradientStop Color="#FF4DF73C" Offset="0"/>
+                    <GradientStop Color="#FF76FD69" Offset="1"/>
+                </LinearGradientBrush>
+            </CheckBox.Resources>
+            <CheckBox.Template>
+                <ControlTemplate TargetType="CheckBox">
+                    <Grid Background="Transparent">
+                        <Rectangle Name="rec1" Width="2" Height="2" Fill="{StaticResource gradBlue1}" Margin="3,3,15,11"></Rectangle>
+                        <Rectangle Name="rec2" Width="2" Height="2" Fill="{StaticResource gradBlue1}" Margin="3,7,15,7"></Rectangle>
+                        <Rectangle Name="rec3" Width="2" Height="2" Fill="{StaticResource gradBlue1}" Margin="3,11,15,3"></Rectangle>
+                        <Rectangle Name="rec4" Width="9" Height="2" Fill="{StaticResource gradBlue1}" Margin="6,3,5,11"></Rectangle>
+                        <Rectangle Name="rec5" Width="10" Height="2" Fill="{StaticResource gradBlue1}" Margin="6,7,4,7"></Rectangle>
+                        <Rectangle Name="rec6" Width="8" Height="2" Fill="{StaticResource gradBlue1}" Margin="6,11,6,3"></Rectangle>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="False">
+                            <Setter TargetName="rec1" Property="Fill" Value="#FF939393"></Setter>
+                            <Setter TargetName="rec2" Property="Fill" Value="#FF939393"></Setter>
+                            <Setter TargetName="rec3" Property="Fill" Value="#FF939393"></Setter>
+                            <Setter TargetName="rec4" Property="Fill" Value="#FF939393"></Setter>
+                            <Setter TargetName="rec5" Property="Fill" Value="#FF939393"></Setter>
+                            <Setter TargetName="rec6" Property="Fill" Value="#FF939393"></Setter>
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsChecked" Value="True"></Condition>
+                                <Condition Property="IsMouseOver" Value="True"></Condition>
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="rec1" Property="Fill" Value="{StaticResource gradBlue2}"></Setter>
+                            <Setter TargetName="rec2" Property="Fill" Value="{StaticResource gradBlue2}"></Setter>
+                            <Setter TargetName="rec3" Property="Fill" Value="{StaticResource gradBlue2}"></Setter>
+                            <Setter TargetName="rec4" Property="Fill" Value="{StaticResource gradBlue2}"></Setter>
+                            <Setter TargetName="rec5" Property="Fill" Value="{StaticResource gradBlue2}"></Setter>
+                            <Setter TargetName="rec6" Property="Fill" Value="{StaticResource gradBlue2}"></Setter>
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsChecked" Value="False"></Condition>
+                                <Condition Property="IsMouseOver" Value="True"></Condition>
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="rec1" Property="Fill" Value="White"></Setter>
+                            <Setter TargetName="rec2" Property="Fill" Value="White"></Setter>
+                            <Setter TargetName="rec3" Property="Fill" Value="White"></Setter>
+                            <Setter TargetName="rec4" Property="Fill" Value="White"></Setter>
+                            <Setter TargetName="rec5" Property="Fill" Value="White"></Setter>
+                            <Setter TargetName="rec6" Property="Fill" Value="White"></Setter>
+                        </MultiTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </CheckBox.Template>
+            <CheckBox.Style>
+                <Style TargetType="CheckBox">
+                    <Style.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="ToolTip" Value="Hide List"></Setter>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="False">
+                            <Setter Property="ToolTip" Value="Show List"></Setter>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </CheckBox.Style>
+        </CheckBox>
+        <CheckBox x:Name="Check_Lyric" Height="16" Width="20" Grid.Column="0" 
+                      FontFamily="Wingdings" FontSize="28" FontWeight="ExtraBlack" Margin="6,15,6,15"
+                      Background="Transparent" Unchecked="Check_Lyric_Unchecked" Checked="Check_Lyric_Checked">
+            <CheckBox.Resources>
+                <LinearGradientBrush x:Key="gradBlue1" StartPoint="0,0.5" EndPoint="1,0.5">
+                    <GradientStop Color="#FF0FBF0F" Offset="0.8"/>
+                    <GradientStop Color="#FF65FF73" Offset="1"/>
+                </LinearGradientBrush>
+                <LinearGradientBrush x:Key="gradBlue2" StartPoint="0,0.5" EndPoint="1,0.5">
+                    <GradientStop Color="#FF4DF73C" Offset="0.8"/>
+                    <GradientStop Color="#FF76FD69" Offset="1"/>
+                </LinearGradientBrush>
+            </CheckBox.Resources>
+            <CheckBox.Template>
+                <ControlTemplate TargetType="CheckBox">
+                    <Grid Background="Transparent">
+                        <Rectangle Name="rec1" Width="12" Height="2" Fill="{StaticResource gradBlue1}" Margin="3,3,4,11"></Rectangle>
+                        <Rectangle Name="rec2" Width="12" Height="2" Fill="{StaticResource gradBlue1}" Margin="3,7,4,7"></Rectangle>
+                        <Rectangle Name="rec3" Width="12" Height="2" Fill="{StaticResource gradBlue1}" Margin="3,11,4,3"></Rectangle>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="False">
+                            <Setter TargetName="rec1" Property="Fill" Value="#FF939393"></Setter>
+                            <Setter TargetName="rec2" Property="Fill" Value="#FF939393"></Setter>
+                            <Setter TargetName="rec3" Property="Fill" Value="#FF939393"></Setter>
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsChecked" Value="True"></Condition>
+                                <Condition Property="IsMouseOver" Value="True"></Condition>
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="rec1" Property="Fill" Value="{StaticResource gradBlue2}"></Setter>
+                            <Setter TargetName="rec2" Property="Fill" Value="{StaticResource gradBlue2}"></Setter>
+                            <Setter TargetName="rec3" Property="Fill" Value="{StaticResource gradBlue2}"></Setter>
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsChecked" Value="False"></Condition>
+                                <Condition Property="IsMouseOver" Value="True"></Condition>
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="rec1" Property="Fill" Value="White"></Setter>
+                            <Setter TargetName="rec2" Property="Fill" Value="White"></Setter>
+                            <Setter TargetName="rec3" Property="Fill" Value="White"></Setter>
+                        </MultiTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+
+            </CheckBox.Template>
+            <CheckBox.Style>
+                <Style TargetType="CheckBox">
+                    <Style.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="ToolTip" Value="Hide Lyric"></Setter>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="False">
+                            <Setter Property="ToolTip" Value="Show Lyric"></Setter>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </CheckBox.Style>
+        </CheckBox>
+        <Slider x:Name="Slider_Volumne" Width="100" Style="{StaticResource MySlider}"  VerticalAlignment="Bottom" Grid.Row="1" Grid.ColumnSpan="3" Margin="15,0,15,10" Grid.Column="2"
+                ValueChanged="Slider_Volumne_ValueChanged" Maximum="100" />
+    </Grid>
+</UserControl>

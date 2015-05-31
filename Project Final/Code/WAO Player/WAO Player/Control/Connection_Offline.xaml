@@ -1,0 +1,438 @@
+﻿<UserControl x:Name="US"
+             x:Class="WAO_Player.Control.Connection_Offline"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:WAO_Player.Control"
+             mc:Ignorable="d"
+             d:DesignHeight="400" d:DesignWidth="800" Background="Transparent" >
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/ResourceControl\TabControl.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/ResourceControl\DataGrid.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/ResourceControl\NewStyleControl.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/ResourceControl\Button.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <!--Contxt menu cho các item trong danh sách các ca sĩ-->
+            <ContextMenu x:Key="ContextMenu_Artist">
+                <MenuItem Style="{StaticResource MLB_MenuItem}" FontSize="12" Header="Show list songs" Width="auto" Click="MenuItem_Click_3"/>
+                <MenuItem Style="{StaticResource MLB_MenuItem}" FontSize="12" Header="Add to Nowplaying" Width="auto" Click="MenuItem_Click_4"/>
+                <MenuItem Style="{StaticResource MLB_MenuItem}" FontSize="12" Header="Add to Playlist" Width="auto"/>
+                <MenuItem Style="{StaticResource MLB_MenuItem}" FontSize="12" Header="Artist Info" Width="auto"/>
+            </ContextMenu>
+
+            <!--Contxt menu cho các item trong danh sách bài hát-->
+            <ContextMenu x:Key="ContextMenu_Song">
+                <MenuItem Style="{StaticResource MLB_MenuItem}" FontSize="12" Header="Play this song" Width="auto" Click="MenuItem_Click"/>
+                <MenuItem Style="{StaticResource MLB_MenuItem}" FontSize="12" Header="Add to nowplaying" Width="auto" Click="MenuItem_Click_1"/>
+                <MenuItem Style="{StaticResource MLB_MenuItem}" FontSize="12" Header="Add to Playlist" Width="auto" Click="MenuItem_Click_5"/>
+            </ContextMenu>
+
+            <!--Contxt menu cho các item trong danh sách video-->
+            <ContextMenu x:Key="ContextMenu_Video">
+                <MenuItem Style="{StaticResource MLB_MenuItem}" FontSize="12" Header="Play this video" Width="auto" Click="MenuItem_Click_2"/>
+            </ContextMenu>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid>
+        <TabControl x:Name="tab" x:FieldModifier="public" Template="{StaticResource ZuneTabControlVer}" Grid.Column="0">
+            <TabItem x:Name="TabItem_Song" Margin="0,0,0,0" Header="SONG" Height="40"
+                     Background="{x:Null}" IsSelected="True" ContextMenuOpening="TabItem_Song_ContextMenuOpening">
+                <Grid Margin="5,5,5,5">
+                    <ListView x:FieldModifier="public" Foreground="YellowGreen" Background="Transparent" FontSize="12" TextBlock.TextAlignment="Center" x:Name="List_Song" SelectionChanged="List_Song_SelectionChanged">
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="ListViewItem">
+                                <Setter Property="SnapsToDevicePixels" Value="true"/>
+                                <Setter Property="OverridesDefaultStyle" Value="true"/>
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="ListViewItem">
+                                            <Border Name="Border" Padding="3"
+                                                                        SnapsToDevicePixels="true"
+                                                                        Background="Transparent">
+                                                <GridViewRowPresenter VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                            </Border>
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="IsSelected" Value="true">
+                                                    <Setter TargetName="Border" Property="Background">
+                                                        <Setter.Value>
+                                                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                                                <GradientStop Color="Black" Offset="0"/>
+                                                                <GradientStop Color="#FFD9DEC7" Offset="1"/>
+                                                            </LinearGradientBrush>
+                                                        </Setter.Value>
+                                                    </Setter>
+                                                    <Setter TargetName="Border" Property="TextBlock.Foreground" Value="Blue"/>
+                                                </Trigger>
+                                                <Trigger  Property="IsMouseOver" Value="true">
+                                                    <Setter TargetName="Border" Property="Background">
+                                                        <Setter.Value>
+                                                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                                                <GradientStop Color="Black" Offset="0"/>
+                                                                <GradientStop Color="#FFDDE0D3" Offset="1"/>
+                                                            </LinearGradientBrush>
+                                                        </Setter.Value>
+                                                    </Setter>
+                                                </Trigger>
+                                                <Trigger Property="IsEnabled" Value="false">
+                                                    <Setter Property="Foreground" Value="White"/>
+                                                </Trigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter Property="ContextMenu" Value="{StaticResource ContextMenu_Song}"/>
+                                <EventSetter Event="MouseDoubleClick" Handler="List_Song_MouseDoubleClick" />
+                                <EventSetter Event="MouseEnter" Handler="List_Song_Artist_MouseEnter" />
+                                <EventSetter Event="MouseLeave" Handler="List_Song_Artist_MouseLeave" />
+                                <EventSetter Event="PreviewMouseLeftButtonUp" Handler="List_Song_PreviewMouseLeftButtonUp" />
+                            </Style>
+                        </ListView.ItemContainerStyle>
+                        <ListView.Resources>
+                            <ResourceDictionary Source="pack://application:,,,/ResourceControl\ListView.xaml"/>
+                        </ListView.Resources>
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn DisplayMemberBinding="{Binding XPath=@Name_Song}" x:Name="Column_Header" Header="SONG" Width="200"/>
+                                <GridViewColumn DisplayMemberBinding="{Binding XPath=@Name_Artist}" Header="ARTIST" Width="150"/>
+                                <GridViewColumn DisplayMemberBinding="{Binding XPath=@Name_Album}" Header="ALBUM" Width="70"/>
+                                <GridViewColumn DisplayMemberBinding="{Binding XPath=@Genre}" Header="GENRE" Width="70"/>
+                                <GridViewColumn DisplayMemberBinding="{Binding XPath=@Lenght}" Header="LENGHT" Width="70"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="TabItem_Video" Margin="0,0,0,0" Header="VIDEO" Height="40">
+                <Grid Margin="5,5,5,5">
+                    <ListView Grid.Row="1" Margin="0,10,0,0" Grid.ColumnSpan="2" x:FieldModifier="public" x:Name="List_Video"  
+                              ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="{x:Null}" BorderThickness="0"
+                              Grid.Column="0" Grid.RowSpan="2" SelectionMode="Extended">
+                        <ListView.ItemTemplate>
+                            <DataTemplate DataType="Model:LocalArtist">
+                                <DataTemplate.Resources>
+                                    <Storyboard x:Key="OnMouseEnter">
+                                        <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" 
+                                           Storyboard.TargetName="grid" 
+                                           Storyboard.TargetProperty="(UIElement.Opacity)">
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00.5000000" Value="0.4"/>
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00.7000000" Value="0.6"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                    <Storyboard x:Key="OnMouseLeave">
+                                        <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" 
+                                           Storyboard.TargetName="grid" 
+                                           Storyboard.TargetProperty="(UIElement.Opacity)">
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0.6"/>
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00.5000000" Value="0.4"/>
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00.7000000" Value="0.0"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+
+                                </DataTemplate.Resources>
+                                <Grid>
+                                <Border BorderBrush="#ff525252" BorderThickness="3" Width="150" Height="150"/>
+                                        <Label x:Name="lblDragMode"  DockPanel.Dock="Top" 
+                                           Content="{Binding XPath=@Name_Video}" Background="#ff525252" 
+                                           Foreground="White" FontFamily="Agency FB" 
+                                           FontSize="14" FontWeight="Bold" 
+                                           Margin="0" Height="25" />
+                                        <Grid Margin="0" Background="#ff525252">
+                                            <MediaElement Source="{Binding XPath=@URL}" Stretch="Fill" LoadedBehavior="Play" Volume="0" UnloadedBehavior="Stop" />
+                                            <Grid x:Name="grid" HorizontalAlignment="Center" 
+                                                    VerticalAlignment="Center" Margin="0" Opacity="0.0" >
+                                                <Button x:Name="btnPlay" Template="{StaticResource btnPlay}" />
+                                            </Grid>
+                                        </Grid>
+                                </Grid>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="ListViewItem">
+                                
+                                <Setter Property="ContextMenu" Value="{StaticResource ContextMenu_Video}"/>
+                                <EventSetter Event="MouseDoubleClick" Handler="List_Video_MouseDoubleClick" />
+                                <!--<EventSetter Event="PreviewMouseLeftButtonUp" Handler="List_Aritist_PreviewMouseLeftButtonUp" /> -->
+                            </Style>
+                        </ListView.ItemContainerStyle>
+                        <ListView.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel IsItemsHost="true">
+                                </WrapPanel>
+                            </ItemsPanelTemplate>
+                        </ListView.ItemsPanel>
+                    </ListView>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="TabItem_Aritist" Margin="0,0,0,0" Header="ARTISTS" Height="40" 
+                     Background="{x:Null}" IsSelected="True">
+                <Grid Margin="5,5,5,5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.6*"/>
+                        <ColumnDefinition Width="0.4*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.3*"/>
+                        <RowDefinition Height="0.7*"/>
+                    </Grid.RowDefinitions>
+                    <ListView x:FieldModifier="public" x:Name="List_Aritist" Background="{x:Null}" BorderThickness="0" 
+                              ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                              Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"
+                              SelectionMode="Extended">
+                        <ListView.ItemTemplate>
+                            <DataTemplate DataType="Model:LocalArtist">
+                                <Grid Height="140" Width="120" Margin="0,0,0,0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="120"></RowDefinition>
+                                        <RowDefinition Height="20"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="20"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid Grid.Row="0" Grid.ColumnSpan="2" Height="100" Width="100">
+                                        <Border Height="74" Width="74" Margin="20,0,0,15" BorderBrush="Blue" BorderThickness="1">
+                                            <Border.Effect>
+                                                <DropShadowEffect Direction="350"  ShadowDepth="1" BlurRadius="1" Color="White" Opacity="0.3"/>
+                                            </Border.Effect>
+                                            <Border.RenderTransform>
+                                                <TransformGroup>
+                                                    <ScaleTransform ScaleY="1" ScaleX="1"/>
+                                                    <SkewTransform AngleY="8"/>
+                                                    <TranslateTransform/>
+                                                </TransformGroup>
+                                            </Border.RenderTransform>
+                                            <Image x:Name="Image1" Stretch="UniformToFill" Source="F:\Cong Nghe Thong Tin\Analysis and Design Software - Tran Minh Triet\Project Final\Code\WAO Player\WAO Player\Picture\Album_Unknow.png"/>
+                                        </Border>
+                                        <Border Height="75" Width="75" Margin="-10,0,0,-15" BorderBrush="White"
+                                                                BorderThickness="2">
+                                            <Border.Effect>
+                                                <DropShadowEffect Direction="350"  ShadowDepth="1" 
+                                                                                  BlurRadius="1" Color="Blue" 
+                                                                                  Opacity="0.3"/>
+                                            </Border.Effect>
+                                            <Border.RenderTransform>
+                                                <TransformGroup>
+                                                    <ScaleTransform ScaleY="1" ScaleX="1"/>
+                                                    <SkewTransform AngleY="9"/>
+                                                    <TranslateTransform/>
+                                                </TransformGroup>
+                                            </Border.RenderTransform>
+                                            <Image x:Name="Image2" Stretch="UniformToFill" Source="F:\Cong Nghe Thong Tin\Analysis and Design Software - Tran Minh Triet\Project Final\Code\WAO Player\WAO Player\Picture\Album_Unknow.png"/>
+                                        </Border>
+                                    </Grid>
+                                    <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding XPath=@Name}" Foreground="White" FontSize="13" 
+                                        FontFamily="Segoe UI" TextAlignment="Center" TextWrapping="Wrap">
+
+                                    </TextBlock>
+                                </Grid>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="ListViewItem">
+                                <Setter Property="ContextMenu" Value="{StaticResource ContextMenu_Artist}"/>
+                                <EventSetter Event="MouseDoubleClick" Handler="List_Aritist_MouseDoubleClick" />
+                                <EventSetter Event="PreviewMouseLeftButtonUp" Handler="List_Aritist_PreviewMouseLeftButtonUp" />
+                            </Style>
+                        </ListView.ItemContainerStyle>
+                        <ListView.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel IsItemsHost="true">
+                                </WrapPanel>
+                            </ItemsPanelTemplate>
+                        </ListView.ItemsPanel>
+                    </ListView>
+                    <ListView x:FieldModifier="public" ItemsSource="{Binding}" x:Name="List_Song_Artist" Grid.Column="1" Grid.Row="1" BorderThickness="0" Background="{x:Null}"
+                              Foreground="Yellow" SelectionMode="Extended" FontSize="13" SelectionChanged="List_Song_Artist_SelectionChanged">
+                        <ListView.Resources>
+                            <ResourceDictionary Source="pack://application:,,,/ResourceControl\ListView.xaml"/>
+                        </ListView.Resources>
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="ListViewItem">
+                                <Setter Property="ContextMenu" Value="{StaticResource ContextMenu_Song}"/>
+                                <EventSetter Event="MouseDoubleClick" Handler="List_Song_Artist_MouseDoubleClick"/>
+                                <EventSetter Event="MouseEnter" Handler="List_Song_Artist_MouseEnter" />
+                                <EventSetter Event="MouseLeave" Handler="List_Song_Artist_MouseLeave" />
+                                <EventSetter Event="PreviewMouseLeftButtonUp" Handler="List_Song_Artist_PreviewMouseLeftButtonUp" />
+                            </Style>
+                        </ListView.ItemContainerStyle>
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn x:Name="GridViewColumn_XAML" Header="SONG" Width="254"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <Grid Grid.Column="1" Grid.Row="0" Margin="2,0,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.5*"/>
+                            <ColumnDefinition Width="0.5*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="0">
+                            <Border Height="75" Width="75" VerticalAlignment="Top" HorizontalAlignment="Right"
+                                Margin="0,10,15,0" BorderBrush="White" BorderThickness="0.6" >
+                                <Border.RenderTransform>
+                                    <TransformGroup>
+                                        <SkewTransform AngleY="7"/>
+                                    </TransformGroup>
+                                </Border.RenderTransform>
+                                <Image Stretch="UniformToFill" Source="{Binding ElementName=Image1, Path=Source}" />
+                            </Border>
+                            <Border Height="75" Width="75" VerticalAlignment="Top" HorizontalAlignment="Right"
+                                    Margin="0,20,30,0" BorderBrush="White" BorderThickness="0.6">
+                                <Border.Effect>
+                                    <DropShadowEffect Direction="350"  ShadowDepth="1" BlurRadius="1" Color="White" Opacity="0.3"/>
+                                </Border.Effect>
+                                <Border.RenderTransform>
+                                    <TransformGroup>
+                                        <SkewTransform AngleY="7"/>
+                                    </TransformGroup>
+                                </Border.RenderTransform>
+                                <Image Source="{Binding ElementName=Image2}" Stretch="UniformToFill" />
+                            </Border>
+                        </Grid>
+                        <StackPanel Grid.Column="1">
+                            <TextBlock FontSize="15" Foreground="White"/>
+                            <TextBlock FontSize="15" Foreground="White"/>
+                            <TextBlock x:Name="Total_Song" Text="Total Song:" FontSize="15" Foreground="White"/>
+                        </StackPanel>
+                    </Grid>
+                    <GridSplitter Grid.RowSpan="2" Grid.Column="0"  Width="1" BorderBrush="White" ></GridSplitter>
+                </Grid>
+
+            </TabItem>
+            <TabItem x:Name="TabItem_Album" Margin="0,0,0,0" Header="PLAYLIST" Height="40" 
+                     Background="{x:Null}" IsSelected="True">
+                <Grid Margin="5,5,5,5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.6*"/>
+                        <ColumnDefinition Width="0.4*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.3*"/>
+                        <RowDefinition Height="0.7*"/>
+                    </Grid.RowDefinitions>
+                    <ListView x:Name="List_Album" Background="{x:Null}" BorderThickness="0" 
+            			ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+            			Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"
+            			SelectionMode="Extended">
+                        <ListView.ItemTemplate>
+                            <DataTemplate DataType="Model:LocalArtist">
+                                <local:Item/>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="{x:Type ListViewItem}">
+                                <Setter Property="ContextMenu" Value="{StaticResource ContextMenu_Artist}"/>
+                            </Style>
+                        </ListView.ItemContainerStyle>
+                        <ListView.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel IsItemsHost="true"/>
+                            </ItemsPanelTemplate>
+                        </ListView.ItemsPanel>
+                    </ListView>
+                    <ListView Grid.Column="1" Grid.Row="1" BorderThickness="0" Background="{x:Null}"
+            			SelectionMode="Extended" FontSize="13">
+                        <ListView.Resources>
+                            <ResourceDictionary Source="pack://application:,,,/ResourceControl\ListView.xaml"/>
+                        </ListView.Resources>
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="SONG" Width="185"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <Grid Grid.Column="1" Grid.Row="0" Margin="2,0,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.5*"/>
+                            <ColumnDefinition Width="0.5*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="0">
+                            <Image Margin="3,3,3,3" />
+                        </Grid>
+                        <StackPanel Grid.Column="1">
+                            <TextBlock FontSize="15" Foreground="White"/>
+                            <TextBlock FontSize="15" Foreground="White"/>
+                            <TextBlock Text="Total Song:" FontSize="15" Foreground="White"/>
+                        </StackPanel>
+                    </Grid>
+                    <GridSplitter Grid.RowSpan="2" Grid.Column="0"  Width="1" BorderBrush="White" />
+                </Grid>
+
+            </TabItem>
+
+            <TabItem Header="SEARCH" Margin="0,0,0,0"  TextBlock.Foreground="White" Height="40">
+                <Grid x:Name="Grid_Search" Margin="50,10,10,44">
+
+                    <ListView x:FieldModifier="public" Foreground="Yellow" Background="Transparent" FontSize="12" TextBlock.TextAlignment="Center" x:Name="List_Search" SelectionChanged="List_Search_SelectionChanged">
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="ListViewItem">
+                                <Setter Property="ContextMenu" Value="{StaticResource ContextMenu_Song}"/>
+                                <Setter Property="SnapsToDevicePixels" Value="true"/>
+                                <Setter Property="OverridesDefaultStyle" Value="true"/>
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="ListViewItem">
+                                            <Border Name="Border" Padding="3"
+                                                                        SnapsToDevicePixels="true"
+                                                                        Background="Transparent">
+                                                <GridViewRowPresenter VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                            </Border>
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="IsSelected" Value="true">
+                                                    <Setter TargetName="Border" Property="Background">
+                                                        <Setter.Value>
+                                                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                                                <GradientStop Color="Black" Offset="0"/>
+                                                                <GradientStop Color="#FFD9DEC7" Offset="1"/>
+                                                            </LinearGradientBrush>
+                                                        </Setter.Value>
+                                                    </Setter>
+                                                    <Setter TargetName="Border" Property="TextBlock.Foreground" Value="Blue"/>
+                                                </Trigger>
+                                                <Trigger  Property="IsMouseOver" Value="true">
+                                                    <Setter TargetName="Border" Property="Background">
+                                                        <Setter.Value>
+                                                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                                                <GradientStop Color="Black" Offset="0"/>
+                                                                <GradientStop Color="#FFDDE0D3" Offset="1"/>
+                                                            </LinearGradientBrush>
+                                                        </Setter.Value>
+                                                    </Setter>
+                                                </Trigger>
+                                                <Trigger Property="IsEnabled" Value="false">
+                                                    <Setter Property="Foreground" Value="White"/>
+                                                </Trigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                                <EventSetter Event="MouseDoubleClick" Handler="List_Search_MouseDoubleClick" />
+                                <EventSetter Event="MouseEnter" Handler="List_Song_Artist_MouseEnter" />
+                                <EventSetter Event="MouseLeave" Handler="List_Song_Artist_MouseLeave" />
+                                <EventSetter Event="PreviewMouseLeftButtonUp" Handler="List_Search_PreviewMouseLeftButtonUp" />
+                            </Style>
+                        </ListView.ItemContainerStyle>
+                        <ListView.Resources>
+                            <ResourceDictionary Source="pack://application:,,,/ResourceControl\ListView.xaml"/>
+                        </ListView.Resources>
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn DisplayMemberBinding="{Binding Name_Song}" Header="SONG" Width="200"/>
+                                <GridViewColumn DisplayMemberBinding="{Binding Name_Artist}" Header="ARTIST" Width="145"/>
+                                <GridViewColumn DisplayMemberBinding="{Binding Name_Album}" Header="ALBUM" Width="60"/>
+                                <GridViewColumn DisplayMemberBinding="{Binding Genre}" Header="GENRE" Width="65"/>
+                                <GridViewColumn DisplayMemberBinding="{Binding Lenght}" Header="LENGHT" Width="60"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</UserControl>

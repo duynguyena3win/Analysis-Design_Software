@@ -1,0 +1,85 @@
+﻿<Window x:Class="WAO_Player.Control.Setting"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" WindowStartupLocation="CenterScreen"
+             WindowStyle="None" MaxHeight="300" MaxWidth="515" Width="515" Height="300" MinWidth="515" MinHeight="300" MouseLeftButtonDown="Window_MouseLeftButtonDown" Loaded="Window_Loaded">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/ResourceControl\TabControl.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/ResourceControl\Button.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <ContextMenu x:Key="ContextMenu_Folder">
+                <MenuItem Header="Remove" FontWeight="Bold" />
+            </ContextMenu>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="0.8*"/>
+        </Grid.RowDefinitions>
+        <Rectangle Grid.RowSpan="2" x:Name="Rec_Name" Margin="3,15,0,0"  Grid.Column="0" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="50" Width="20">
+            <Rectangle.Fill>
+                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,0.7">
+                    <GradientStop Color="#FF11DE3F" Offset="0.871"/>
+                    <GradientStop Color="#FF0625F0" Offset="0.111"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <TextBlock Margin="3,7,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" 
+                   Grid.Row="1" Height="20" Width="50" FontSize="13" Text="  W A O" >
+            <TextBlock.RenderTransform>
+                <RotateTransform Angle="270"/>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <TabControl Template="{StaticResource TabControl_Setting}" Grid.Row="1" Foreground="Black">
+            <TabItem x:Name="TabItem_Collection" Margin="0,10,0,0" Header="Collection"
+        		Background="{x:Null}" IsSelected="True">
+                <Grid Margin="10,8,10,10">
+
+                    <TextBlock Margin="5,0,0,0" FontStyle="Italic">
+                        <Run Text="Thêm vào các thư mục lưu nhạc hoặc video"/>
+                    </TextBlock>
+                    <Grid Margin="5,30,10,78">
+                        <Border BorderThickness="2" BorderBrush="Black"/>
+                        <ListView x:Name="List_Folder" Background="White" FontSize="12">
+                            <ListView.View>
+                                <GridView>
+                                    <GridView.ColumnHeaderContainerStyle>
+                                        <Style TargetType="GridViewColumnHeader">
+                                            <Setter Property="Background" Value="White"/>
+                                        </Style>
+                                    </GridView.ColumnHeaderContainerStyle>
+                                    <GridViewColumn Header="List Folder" x:Name="Column_Nowplaying_Header" Width="377"/>
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                    </Grid>
+                    <Button VerticalAlignment="Top" Click="Button_Click_2" Template="{StaticResource Button_Style2}" HorizontalAlignment="Right" Content="Add Folder" Width="68" Margin="0,7,86,0"/>
+                    <Button VerticalAlignment="Top" Click="Button_Click_3"  Template="{StaticResource Button_Style2}" HorizontalAlignment="Right" Content="Remove" Width="68" Margin="0,7,10,0"/>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="TabItem_Display" Margin="0,0,0,0" Header="Display"
+        		Background="{x:Null}" IsSelected="True">
+                <Grid Margin="10,10,10,10">
+                    <Border BorderThickness="1" BorderBrush="Black"/>
+                    <TextBlock Text="Chọn hình nền cho chương trình" Margin="5,5,0,0"/>
+                    <Button Click="Button_Click_4" Content="Chossen Image" Template="{StaticResource Button_Style2}" Margin="238,27,49,152" />
+                    <Button Click="Button_Click_5" Content="Default Image" Template="{StaticResource Button_Style2}" Margin="238,76,49,103" />
+                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="112" Margin="47,27,0,0" VerticalAlignment="Top" Width="169">
+                        <Image x:Name="Image_Back" Stretch="Fill"/>
+                    </Border>
+                    <Border x:Name="Border_Back" Background="Black" Visibility="Hidden" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="112" Margin="47,27,0,0" VerticalAlignment="Top" Width="169">
+                    </Border>
+                </Grid>
+            </TabItem>
+
+
+        </TabControl>
+        <Button Template="{StaticResource Button_Style2}" Content="OK" HorizontalAlignment="Left" Margin="325,10,0,0" VerticalAlignment="Top" Width="75" Height="26" Click="Button_Click"/>
+        <Button Template="{StaticResource Button_Style2}" Content="Cancle" HorizontalAlignment="Left" Margin="415,10,0,0" VerticalAlignment="Top" Width="75" Height="26" Click="Button_Click_1"/>
+    </Grid>
+</Window>

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<WAO_PLAYER cot="5" dong="5">
+	<Folder_Container>
+		<Folder path="C:\Users\Public\Music"/>
+	</Folder_Container>
+	<List_Song_Offline>
+		<Song Name_Song ="" Name_Aritist="" Name_Album="" Genre="" Lenght="" URL="" />
+	</List_Song_Offline>
+</WAO_PLAYER>
